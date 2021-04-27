@@ -11,7 +11,7 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
@@ -37,23 +37,8 @@
 
             <div class="menu-nav">
                 <ul>
-                    <li>
-                        <a href="">Home</a>
-                    </li>
-                    <li>
-                        <a href="">Meet the band</a>
-                    </li>
-                    <li>
-                        <a href="">Live Dates</a>
-                    </li>
-                    <li>
-                        <a href="">Latest news</a>
-                    </li>
-                    <li>
-                        <a href="">Albums</a>
-                    </li>
-                    <li>
-                        <a href="">Fans</a>
+                    <li v-for="link in links">
+                        <a :href="link.href" :class="link.active ? 'active' : ''">{{link.name}}</a>
                     </li>
                 </ul>
             </div>
@@ -63,8 +48,18 @@
     <main id="homepage" :scroll="scrolledHead()">
         <section class="jumbo">
             <div>
-                JUMBOTRON
-                <button>ciao</button>
+                <h2>
+                    Untold Stories
+                </h2>
+                <p>
+                    There is an untold story behind every favorite song.
+                </p>
+                <a href="#" class="btn">
+                    LATEST ALBUM
+                </a>
+                <a href="#" class="btn-alt">
+                    LIVE DATES
+                </a>
             </div>
         </section>
     

@@ -13,7 +13,34 @@ function headerVue() {
     el: '#headerVue',
     data: {
       scroll: 0,
-      hamActive: false
+      hamActive: false,
+      links: [{
+        name: 'Home',
+        href: 'index.html',
+        active: true
+      }, {
+        name: 'Meet The Band',
+        href: '#',
+        active: false
+      }, {
+        name: 'Live Dates',
+        href: '#',
+        active: false
+      }, {
+        name: 'Latest News',
+        href: '#',
+        active: false
+      }, {
+        name: 'Albums',
+        href: '#',
+        active: false
+      }, {
+        name: 'Fans',
+        href: '#',
+        active: false
+      }],
+      linkActive: false,
+      linkIndex: -1
     },
     created: function created() {
       window.addEventListener('scroll', this.scrolledHead);
@@ -25,12 +52,6 @@ function headerVue() {
       },
       hamburgerActive: function hamburgerActive() {
         this.hamActive = !this.hamActive;
-
-        if (this.hamActive) {
-          console.log('Clicked');
-        } else {
-          console.log('DISABLE');
-        }
       }
     },
     destroyed: function destroyed() {

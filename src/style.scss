@@ -112,17 +112,25 @@ header{
             background-color: $view-bg-color;
             opacity: 0;
             transition: opacity 0.7s;
-            @include centering(137px, 20px);
-            text-align: center;
+            @include centering(150px, 20px);
             overflow-y: auto;
+            text-align: center;
             li{
-                margin-bottom: 50px;
+                margin-bottom: 55px;
                 font-size: 35px;
                 a{
-                    color: white;
+                    color: rgba(255, 255, 255, 0.5);
+                    transition: color 0.4s;
+                    &.active, &:hover{
+                        color: white;
+                    }
                 }
                 a::selection{
                     color:none;
+                    background: none;
+                }
+                a::-moz-selection {
+                    color: none;
                     background: none;
                 }
             }

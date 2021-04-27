@@ -15,7 +15,24 @@
     width: 100%;
     padding: 0 2%;
 }
+// Btn standard
+@mixin btnStandard($bg-col, $col, $bord-col) {
+    display: inline-block;
+    padding: 17px 40px;
+    font-size: 18px;
+    font-family: $ptsans-font;
+    background-color: $bg-col;
+    color: $col;
+    border: 1px solid $bord-col;
+    border-radius: 3px;
+}
 
 // Variables
+// Colors
 $main-bg-color: #292d39;
 $view-bg-color: #eb4b54;
+
+// Fonts
+$merri-font: 'Merriweather', serif;
+$montserrat-font: 'Montserrat', sans-serif;
+$ptsans-font: 'PT Sans', sans-serif;
