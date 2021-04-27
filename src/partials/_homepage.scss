@@ -22,7 +22,7 @@ main#homepage{
         border-top: 5px solid grey;
         @include posStandard;
         background-color: red;
-        @include centering(0, 30px);
+        @include centering(50px, 50px);
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -57,12 +57,38 @@ main#homepage{
                 border: 3px solid grey;
             }
         }
+
+        .events-list li{
+            background-color:cadetblue;
+            margin: 10px 0;
+        }
     }
 
-   .view-box{
-       @include posStandard;
-       @include centering(50px, 50px);
-       background-color: aqua;
-       text-align: center;
-   }
+    .view-box{
+        @include posStandard;
+        @include centering(50px, 50px);
+        background-color: $view-bg-color;
+        text-align: center;
+    }
+
+    .music-player{
+        @include posStandard;
+        @include centering(100px, 100px);
+        height: 700px;
+        text-align: center;
+        color: white;
+        background-color: darkgoldenrod;
+        background-image: url('img/home-testimonial-parallax.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        p{
+            width: 80%;
+            margin: 0 auto 50px;
+        }
+        img{
+            cursor: pointer;
+        }
+    }
 }

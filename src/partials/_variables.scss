@@ -8,3 +8,14 @@
 @mixin centering($padUp, $padDown) {
     padding: $padUp 30px $padDown;
 }
+// Container
+@mixin container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2%;
+}
+
+// Variables
+$main-bg-color: #292d39;
+$view-bg-color: #eb4b54;
