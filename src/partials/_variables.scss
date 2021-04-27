@@ -1,0 +1,10 @@
+// Mixin
+// Posizione standard
+@mixin posStandard {
+    position: relative;
+    z-index: 100;
+}
+// Centratura generale
+@mixin centering($padUp, $padDown) {
+    padding: $padUp 30px $padDown;
+}
