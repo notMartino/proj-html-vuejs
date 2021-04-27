@@ -9,21 +9,32 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/2e0cc00556.js" crossorigin="anonymous"></script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
     <!-- Local links -->
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <div>
+
+    
+    <header id="headerVue" :class="scroll > 0 ? 'scrolled' : ''">
         <div class="container">
             <a href="index.html">
-                <img src="img/avada-music-logo.png" alt="Avada Music Logo">
+                <img src="img/avada-music-logo.png" :class="scroll > 0 ? 'mini' : ''" alt="Avada Music Logo">
             </a>
 
-            <button class="hamburger">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-times"></i>
-            </button>
+            <div class="ham-container" :class="hamActive ? 'active' : ''" @click="hamburgerActive()">
+                <div class="hamburger">
+                </div>
+            </div>
+
             <div class="menu-nav">
                 <ul>
                     <li>
@@ -49,8 +60,7 @@
         </div>
     </header>
     
-    
-    <main id="homepage">
+    <main id="homepage" :scroll="scrolledHead()">
         <section class="jumbo">
             <div>
                 JUMBOTRON
@@ -197,20 +207,29 @@
 
                 <ul class="socials">
                     <li>
-                        <i class="fab fa-facebook-f"></i>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
                     </li>
                     <li>
-                        <i class="fab fa-twitter"></i>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                     </li>
                     <li>
-                        <i class="fab fa-instagram"></i>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </li>
                     <li>
-                        <i class="fab fa-youtube"></i>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
         </section>
     </footer>
+</div>
 </body>
 </html>

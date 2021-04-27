@@ -7,8 +7,41 @@
   \********************/
 /***/ (() => {
 
+// const { vue } = require("laravel-mix");
+function headerVue() {
+  new Vue({
+    el: '#headerVue',
+    data: {
+      scroll: 0,
+      hamActive: false
+    },
+    created: function created() {
+      window.addEventListener('scroll', this.scrolledHead);
+    },
+    computed: {},
+    methods: {
+      scrolledHead: function scrolledHead() {
+        this.scroll = window.scrollY;
+      },
+      hamburgerActive: function hamburgerActive() {
+        this.hamActive = !this.hamActive;
+
+        if (this.hamActive) {
+          console.log('Clicked');
+        } else {
+          console.log('DISABLE');
+        }
+      }
+    },
+    destroyed: function destroyed() {
+      window.removeEventListener('scroll', this.handleScroll);
+    }
+  });
+}
+
 function init() {
   console.log('JS Connected');
+  headerVue();
 }
 
 document.addEventListener('DOMContentLoaded', init);
