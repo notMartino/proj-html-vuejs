@@ -24,7 +24,7 @@
     <div>
 
     
-    <header id="headerVue" :class="scroll > 0 ? 'scrolled' : ''">
+    <header id="vueHead" :class="scroll > 0 ? 'scrolled' : ''">
         <div class="container">
             <a href="index.html">
                 <img src="img/avada-music-logo.png" :class="scroll > 0 ? 'mini' : ''" alt="Avada Music Logo">
@@ -261,29 +261,14 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="vueFoot">
         <section class="nav-footer">
             <div class="container">
                 <img src="img/logo_footer.png" alt="Avada Music footer's logo">
 
                 <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
+                    <li v-for="link in links">
+                        <a href="#" :class="link.active ? 'active' : ''">{{link.name}}</a>
                     </li>
                 </ul>
             </div>

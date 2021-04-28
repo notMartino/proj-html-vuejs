@@ -219,7 +219,7 @@ main#homepage .paragraph .events-list li {
   background-color: #323844;
   text-align: left;
   cursor: pointer;
-  transition: height 0.5s;
+  transition: height 0.4s;
   overflow: hidden;
 }
 main#homepage .paragraph .events-list li.active {
@@ -252,7 +252,7 @@ main#homepage .paragraph .events-list li .map {
 }
 main#homepage .paragraph .events-list li .map iframe {
   width: 320px;
-  height: 230px;
+  height: 240px;
   margin-right: 50px;
 }
 main#homepage .paragraph .events-list li .map div {
@@ -323,7 +323,6 @@ main#homepage .music-player {
   height: 700px;
   text-align: center;
   color: white;
-  background-color: darkgoldenrod;
   background-image: url("img/home-testimonial-parallax.jpg");
   background-size: cover;
   background-position: center;
@@ -502,7 +501,9 @@ footer .nav-footer {
   padding: 50px 30px 50px;
   height: 190px;
   color: white;
-  background-color: darkblue;
+  background-color: #323844;
+  font-family: "Merriweather", serif;
+  font-size: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -522,10 +523,14 @@ footer .nav-footer .container ul {
 }
 footer .nav-footer .container ul li {
   display: inline-block;
+  margin-left: 18px;
 }
 footer .nav-footer .container ul li a {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.4s;
+}
+footer .nav-footer .container ul li a.active, footer .nav-footer .container ul li a:hover {
   color: white;
-  margin-left: 15px;
 }
 footer .terms {
   padding: 30px 30px 30px;

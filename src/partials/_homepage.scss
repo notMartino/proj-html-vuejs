@@ -212,7 +212,7 @@ main#homepage{
                 background-color: $light-gray;
                 text-align: left;
                 cursor: pointer;
-                transition: height 0.5s;
+                transition: height 0.4s;
                 overflow: hidden;
                 &.active{
                     height: 330px;
@@ -245,7 +245,7 @@ main#homepage{
                     margin-top: 30px;
                     iframe{
                         width: 320px;
-                        height: 230px;
+                        height: 240px;
                         margin-right: 50px
                     }
                     div{
@@ -313,7 +313,6 @@ main#homepage{
         height: 700px;
         text-align: center;
         color: white;
-        background-color: darkgoldenrod;
         background-image: url('img/home-testimonial-parallax.jpg');
         background-size: cover;
         background-position: center;
@@ -339,6 +338,4 @@ main#homepage{
             }
         }
     }
-
-
 }

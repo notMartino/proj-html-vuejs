@@ -150,7 +150,9 @@ footer{
         @include centering(50px, 50px);
         height: 190px;
         color: white;
-        background-color: darkblue;
+        background-color: $light-gray;
+        font-family: $merri-font;
+        font-size: 14px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -165,9 +167,13 @@ footer{
                 align-items: center;
                 li{
                     display: inline-block;
+                    margin-left: 18px;
                     a{
+                        color: rgba(255, 255, 255, 0.5);
+                        transition: color 0.4s;
+                        &.active, &:hover{
                         color: white;
-                        margin-left: 15px;
+                    }
                     }
                 }
             };

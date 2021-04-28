@@ -1,8 +1,8 @@
 // const { vue } = require("laravel-mix");
 
-function vueLinks() {
+function vueLinks(id) {
     new Vue({
-        el: '#headerVue',
+        el: id,
         data: {
             scroll: 0,
             hamActive: false,
@@ -62,7 +62,6 @@ function vueLinks() {
 }
 
 function eventsParties() {
-    console.log('ciaisdiaidas');
     new Vue({
         el: '#eventsVue',
         data:{
@@ -125,7 +124,8 @@ function eventsParties() {
 
 function init() {
     console.log('JS Connected');
-    vueLinks();
+    vueLinks('#vueHead');
+    vueLinks('#vueFoot');
     eventsParties();
 }
 
