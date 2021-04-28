@@ -38,7 +38,6 @@ main#homepage{
             margin-left: 10px;
         }
         a:hover{
-            transition: all 0.4s;
             background-color: white;
             color: black;
             border-color: white;
@@ -155,11 +154,12 @@ main#homepage{
                 position: absolute;
                 bottom: 0;
                 left: 0;
+                z-index: 10;
                 width: 100%;
                 background-color: $light-gray;
                 text-align: left;
                 padding: 30px 25px 20px 25px;;
-                transition: bottom 0.5s;
+                transition: bottom 0.4s;
                 h2{
                     color: $view-bg-color;
                     font-family: $montserrat-font;
@@ -180,7 +180,7 @@ main#homepage{
                 left: -100%;
                 top: 0;
                 background-color: rgba(235, 75, 84, 0.7);
-                transition: left 0.5s;
+                transition: left 0.4s;
                 display: flex;
                 h2{
                     margin: auto;
@@ -200,17 +200,111 @@ main#homepage{
             }
         }
 
-        .events-list li{
-            background-color:cadetblue;
-            margin: 10px 0;
+        .events-list{
+            flex-basis: 80%;
+            margin-top: 50px;
+            li{
+                height: 60px;
+                margin: 10px 0;
+                padding: 15px 25px;
+                font-family: $montserrat-font;
+                color: $view-bg-color;
+                background-color: $light-gray;
+                text-align: left;
+                cursor: pointer;
+                transition: height 0.5s;
+                overflow: hidden;
+                &.active{
+                    height: 330px;
+                }
+
+                h2{
+                    font-size: 17px;
+                    letter-spacing: 2px;
+                    font-weight: 400;
+                    span{
+                        font-weight: 600;
+                        display: inline-block;
+                        padding: 5px 10px;
+                        margin-right: 10px;
+                        color: white;
+                        transition: background-color 0.3s;
+                    }
+                }
+                &:hover{
+                    background-color: #373d4a;
+                }
+                &:hover span{
+                    background-color: $view-bg-color;
+                }
+                
+                .map{
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    margin-top: 30px;
+                    iframe{
+                        width: 320px;
+                        height: 230px;
+                        margin-right: 50px
+                    }
+                    div{
+                        align-self: flex-end;
+                        flex-basis:calc(100% - 370px);
+                        min-width: 350px;
+                        margin-top: 20px;
+                        h3{
+                            font-family: $montserrat-font;
+                            font-size: 17px;
+                            font-weight: 400;
+                            letter-spacing: 2px;
+                            color: white;
+                        }
+                        p{
+                            color: $para-text;
+                            font-family: $merri-font;
+                            margin: 30px 0;
+                            font-size: 15px;
+                            line-height: 32px;
+                        }
+                        a{
+                            @include btnStandard($view-bg-color, white, $view-bg-color);
+                            padding: 10px 30px;
+                            font-size: 14px;
+                            &:hover{
+                                background-color: white;
+                                border-color: white;
+                                color: #262833;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
-
+    
     .view-box{
         @include posStandard;
-        @include centering(50px, 50px);
         background-color: $view-bg-color;
         text-align: center;
+        font-family: $ptsans-font;
+        font-size: 18px;
+        letter-spacing: 2px;
+        transition: background-color 0.3s;
+        a{
+            width: 100%;
+            padding: 69px 20px;
+            display: inline-block;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        &:hover{
+            background-color: white;
+            a{
+                color: #262833;
+            }
+        }
     }
 
     .music-player{
@@ -224,13 +318,27 @@ main#homepage{
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-
-        p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        p{ 
+            flex-basis: 50%;
+            font-family: $merri-font;
+            font-size: 22px;
+            font-style: italic;
+            line-height: 44px;
+            letter-spacing: 2px;
             width: 80%;
-            margin: 0 auto 50px;
+            margin-bottom: 50px;
         }
-        img{
-            cursor: pointer;
+        div {
+            flex-basis: 80%;
+            img{
+                cursor: pointer;
+            }
         }
     }
+
+
 }

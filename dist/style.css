@@ -36,6 +36,7 @@ main#homepage .jumbo a.btn {
   color: white;
   border: 1px solid #eb4b54;
   border-radius: 3px;
+  transition: all 0.4s;
   margin-right: 10px;
 }
 main#homepage .jumbo a.btn-alt {
@@ -47,10 +48,10 @@ main#homepage .jumbo a.btn-alt {
   color: white;
   border: 1px solid white;
   border-radius: 3px;
+  transition: all 0.4s;
   margin-left: 10px;
 }
 main#homepage .jumbo a:hover {
-  transition: all 0.4s;
   background-color: white;
   color: black;
   border-color: white;
@@ -163,11 +164,12 @@ main#homepage .paragraph .box-cover .bottom-card {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 10;
   width: 100%;
   background-color: #323844;
   text-align: left;
   padding: 30px 25px 20px 25px;
-  transition: bottom 0.5s;
+  transition: bottom 0.4s;
 }
 main#homepage .paragraph .box-cover .bottom-card h2 {
   color: #eb4b54;
@@ -187,7 +189,7 @@ main#homepage .paragraph .box-cover .red-overlay {
   left: -100%;
   top: 0;
   background-color: rgba(235, 75, 84, 0.7);
-  transition: left 0.5s;
+  transition: left 0.4s;
   display: flex;
 }
 main#homepage .paragraph .box-cover .red-overlay h2 {
@@ -204,16 +206,115 @@ main#homepage .paragraph .box-cover:hover .red-overlay {
 main#homepage .paragraph .box-cover:hover .bottom-card {
   bottom: -100%;
 }
+main#homepage .paragraph .events-list {
+  flex-basis: 80%;
+  margin-top: 50px;
+}
 main#homepage .paragraph .events-list li {
-  background-color: cadetblue;
+  height: 60px;
   margin: 10px 0;
+  padding: 15px 25px;
+  font-family: "Montserrat", sans-serif;
+  color: #eb4b54;
+  background-color: #323844;
+  text-align: left;
+  cursor: pointer;
+  transition: height 0.5s;
+  overflow: hidden;
+}
+main#homepage .paragraph .events-list li.active {
+  height: 330px;
+}
+main#homepage .paragraph .events-list li h2 {
+  font-size: 17px;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+main#homepage .paragraph .events-list li h2 span {
+  font-weight: 600;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 10px;
+  color: white;
+  transition: background-color 0.3s;
+}
+main#homepage .paragraph .events-list li:hover {
+  background-color: #373d4a;
+}
+main#homepage .paragraph .events-list li:hover span {
+  background-color: #eb4b54;
+}
+main#homepage .paragraph .events-list li .map {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+main#homepage .paragraph .events-list li .map iframe {
+  width: 320px;
+  height: 230px;
+  margin-right: 50px;
+}
+main#homepage .paragraph .events-list li .map div {
+  align-self: flex-end;
+  flex-basis: calc(100% - 370px);
+  min-width: 350px;
+  margin-top: 20px;
+}
+main#homepage .paragraph .events-list li .map div h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: white;
+}
+main#homepage .paragraph .events-list li .map div p {
+  color: #7d7b8d;
+  font-family: "Merriweather", serif;
+  margin: 30px 0;
+  font-size: 15px;
+  line-height: 32px;
+}
+main#homepage .paragraph .events-list li .map div a {
+  display: inline-block;
+  padding: 17px 40px;
+  font-size: 18px;
+  font-family: "PT Sans", sans-serif;
+  background-color: #eb4b54;
+  color: white;
+  border: 1px solid #eb4b54;
+  border-radius: 3px;
+  transition: all 0.4s;
+  padding: 10px 30px;
+  font-size: 14px;
+}
+main#homepage .paragraph .events-list li .map div a:hover {
+  background-color: white;
+  border-color: white;
+  color: #262833;
 }
 main#homepage .view-box {
   position: relative;
   z-index: 100;
-  padding: 50px 30px 50px;
   background-color: #eb4b54;
   text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  transition: background-color 0.3s;
+}
+main#homepage .view-box a {
+  width: 100%;
+  padding: 69px 20px;
+  display: inline-block;
+  color: white;
+  transition: color 0.3s;
+}
+main#homepage .view-box:hover {
+  background-color: white;
+}
+main#homepage .view-box:hover a {
+  color: #262833;
 }
 main#homepage .music-player {
   position: relative;
@@ -227,12 +328,25 @@ main#homepage .music-player {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 main#homepage .music-player p {
+  flex-basis: 50%;
+  font-family: "Merriweather", serif;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 44px;
+  letter-spacing: 2px;
   width: 80%;
-  margin: 0 auto 50px;
+  margin-bottom: 50px;
 }
-main#homepage .music-player img {
+main#homepage .music-player div {
+  flex-basis: 80%;
+}
+main#homepage .music-player div img {
   cursor: pointer;
 }
 

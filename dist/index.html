@@ -199,16 +199,20 @@
 
         <!-- Sezione View -->
         <section class="view-box">
-            VIEW
+            <a href="#">
+                VIEW ALL LATEST NEWS
+            </a>
         </section>
 
         <!-- Sezione music player -->
         <section class="music-player">
             <p>
-                MUSIC PLAYER <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores veniam, minima omnis et doloribus consequatur! Est, sunt at maxime minus corrupti error harum distinctio, ad, soluta praesentium ullam earum officia! Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae aspernatur quo iste blanditiis nam nostrum adipisci earum cupiditate debitis. Ratione quo vel modi voluptatem consequuntur maiores. Velit, officia fugiat! Porro?
+                “I just listened to it and said to myself, “Man, I really love this album.” Still, today, it just sounds so fresh. It sounds full of ideas. These guys knew what they were doing. They’re good. And they’re inventive. I haven’t heard anything this year that’s as inventive. I don’t really expect to.”
             </p>
-            <img src="img/band_interview_play_icon.png" alt="Play button">
+            <div>
+                <img src="img/band_interview_play_icon.png" alt="Play button">
+
+            </div>
         </section>
 
         <!-- Sezione Live Dates -->
@@ -219,31 +223,41 @@
                 <div class="separator"></div>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sapiente nihil ad hic quisquam non et doloremque, enim numquam reiciendis sint veritatis, accusantium aspernatur itaque, voluptates esse soluta. Expedita, quis!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quae? Saepe itaque nobis placeat, temporibus beatae fuga voluptates eligendi quam odio distinctio magnam facere debitis veniam. Dolore similique repellat reprehenderit!
                 </p>
 
-                <ul class="events-list">
-                    <li>
-                        <span>+</span> 17/08/2020 GEM FESTIVAL MILANO, ITALY
-                    </li>
-                    <li>
-                        <span>+</span> 17/08/2020 GEM FESTIVAL MILANO, ITALY
-                    </li>
-                    <li>
-                        <span>+</span> 17/08/2020 GEM FESTIVAL MILANO, ITALY
-                    </li>
-                    <li>
-                        <span>+</span> 17/08/2020 GEM FESTIVAL MILANO, ITALY
-                    </li>
-                    <li>
-                        <span>+</span> 17/08/2020 GEM FESTIVAL MILANO, ITALY
-                    </li>
-                </ul>
             </div>
+
+            <ul class="events-list" id="eventsVue">
+                <li v-for="(event, index) in nextEvents" @click="openEvent(index)" :class="event.active ? 'active' : ''">
+                    <h2>
+                        <span>+</span> 
+                        {{event.date}} {{event.name}} {{event.location}}
+                    </h2>
+                    <div class="map" v-if="event.active">
+                        <iframe :src="event.src" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                        <div>
+                            <h3>
+                                Untold Stories
+                            </h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet at consectetur magni alias tenetur reprehenderit, fugiat expedita, esse veritatis molestiae quo temporibus.
+                            </p>
+                            <a href="#">
+                                BOOK NOW
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </section>
 
+        <!-- Sezione View -->
         <section class="view-box">
-            VIEW
+            <a href="#">
+                VIEW ALL LIVE DATES
+            </a>
         </section>
     </main>
 
