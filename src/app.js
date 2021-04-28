@@ -56,7 +56,7 @@ function headerVue() {
             }
         },
         destroyed: function() {
-            window.removeEventListener('scroll', this.handleScroll);
+            window.removeEventListener('scroll', this.scrolledHead);
         }
     });
 }
