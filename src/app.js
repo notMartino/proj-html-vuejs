@@ -1,11 +1,10 @@
 // const { vue } = require("laravel-mix");
-
-function vueLinks(id) {
+function vueApp() {
     new Vue({
-        el: id,
+        el: '#app',
         data: {
-            scroll: 0,
-            hamActive: false,
+            scroll: 0, // Valore scroll pagina in px 
+            hamActive: false, // Menu hambuger attivo
             links: [
                 {
                     name: 'Home',
@@ -37,35 +36,44 @@ function vueLinks(id) {
                     href: '#',
                     active: false
                 },
-            ],
-            linkActive: false,
-            linkIndex: -1
-        },
-        created: function() {
-            window.addEventListener('scroll', this.scrolledHead);
-        },
-        computed:{
-
-        },
-        methods:{
-            scrolledHead: function() {
-                this.scroll = window.scrollY;
-            },
-            hamburgerActive: function () {
-                this.hamActive = !this.hamActive;
-            }
-        },
-        destroyed: function() {
-            window.removeEventListener('scroll', this.scrolledHead);
-        }
-    });
-}
-
-function eventsParties() {
-    new Vue({
-        el: '#eventsVue',
-        data:{
-            indexEvent: -1,
+            ], // Links navigazione header/footer
+            linkActive: false, // Link attivo colore acceso
+            rightsList: [
+                {
+                    name: 'Copyright 1997-2021',
+                    link: ''
+                },
+                {
+                    name: 'WEBSITE THEME BY',
+                    link: 'NOT.MARTINO'
+                },
+                {
+                    name: 'ALL RIGHTS RESERVED',
+                    link: ''
+                },
+                {
+                    name: 'POWERED BY',
+                    link: 'NOT.MARTINO'
+                }
+            ], // Lista diritti, links developer
+            socialsList: [
+                { 
+                    class:'facebook-f',
+                    name: 'Facebook'
+                },
+                { 
+                    class:'twitter',
+                    name: 'Twitter'
+                },
+                { 
+                    class:'instagram',
+                    name: 'Instagram'
+                },
+                { 
+                    class:'youtube',
+                    name: 'Youtube'
+                }
+            ], // Links social
             nextEvents: [
                 {
                     name:'GEM FESTIVAL',
@@ -102,14 +110,28 @@ function eventsParties() {
                     src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16929.135687378814!2d2.1610096169375628!3d41.40282781902784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2dcd83dfb93%3A0x9bd8aac21bc3c950!2sSagrada%20Fam%C3%ADlia!5e0!3m2!1sit!2sit!4v1619621211797!5m2!1sit!2sit',
                     active: false
                 }
-            ],
+            ], // lista objs evento (caratteristiche + map position)
         },
-        methods: {
+        created: function() {
+            // Ascoltatore scroll su finestra
+            window.addEventListener('scroll', this.scrolledHead);
+        },
+        methods:{
+            // Allo scroll assegno il valore in px
+            scrolledHead: function() {
+                this.scroll = window.scrollY;
+            },
+            // Attivo/disattivo hamburger menu
+            hamburgerActive: function () {
+                this.hamActive = !this.hamActive;
+            },
+            // Funzione apertura paragrafo evento
             openEvent: function (index) {
-               
+                // Se l'evento aperto è uguale a sè stesso lo chiudo
                 if (this.nextEvents[index].active == true) {
                     this.nextEvents[index].active = false;
                 }
+                // Altrimenti se non è gia aperto chiudo gli altri e apro l'evento cliccato
                 else{
                     this.nextEvents.forEach(element => {
                         element.active = false;
@@ -118,15 +140,16 @@ function eventsParties() {
                 }
                 console.log(this.nextEvents);
             }
+        },
+        destroyed: function() {
+            window.removeEventListener('scroll', this.scrolledHead);
         }
     });
 }
 
 function init() {
     console.log('JS Connected');
-    vueLinks('#vueHead');
-    vueLinks('#vueFoot');
-    eventsParties();
+    vueApp();
 }
 
 document.addEventListener('DOMContentLoaded', init);

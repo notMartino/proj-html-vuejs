@@ -8,12 +8,14 @@
 /***/ (() => {
 
 // const { vue } = require("laravel-mix");
-function vueLinks(id) {
+function vueApp() {
   new Vue({
-    el: id,
+    el: '#app',
     data: {
       scroll: 0,
+      // Valore scroll pagina in px 
       hamActive: false,
+      // Menu hambuger attivo
       links: [{
         name: 'Home',
         href: 'index.html',
@@ -39,32 +41,37 @@ function vueLinks(id) {
         href: '#',
         active: false
       }],
+      // Links navigazione header/footer
       linkActive: false,
-      linkIndex: -1
-    },
-    created: function created() {
-      window.addEventListener('scroll', this.scrolledHead);
-    },
-    computed: {},
-    methods: {
-      scrolledHead: function scrolledHead() {
-        this.scroll = window.scrollY;
-      },
-      hamburgerActive: function hamburgerActive() {
-        this.hamActive = !this.hamActive;
-      }
-    },
-    destroyed: function destroyed() {
-      window.removeEventListener('scroll', this.scrolledHead);
-    }
-  });
-}
-
-function eventsParties() {
-  new Vue({
-    el: '#eventsVue',
-    data: {
-      indexEvent: -1,
+      // Link attivo colore acceso
+      rightsList: [{
+        name: 'Copyright 1997-2021',
+        link: ''
+      }, {
+        name: 'WEBSITE THEME BY',
+        link: 'NOT.MARTINO'
+      }, {
+        name: 'ALL RIGHTS RESERVED',
+        link: ''
+      }, {
+        name: 'POWERED BY',
+        link: 'NOT.MARTINO'
+      }],
+      // Lista diritti, links developer
+      socialsList: [{
+        "class": 'facebook-f',
+        name: 'Facebook'
+      }, {
+        "class": 'twitter',
+        name: 'Twitter'
+      }, {
+        "class": 'instagram',
+        name: 'Instagram'
+      }, {
+        "class": 'youtube',
+        name: 'Youtube'
+      }],
+      // Links social
       nextEvents: [{
         name: 'GEM FESTIVAL',
         location: 'MILANO, ITALY',
@@ -95,30 +102,47 @@ function eventsParties() {
         date: '10/07/2021',
         src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16929.135687378814!2d2.1610096169375628!3d41.40282781902784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2dcd83dfb93%3A0x9bd8aac21bc3c950!2sSagrada%20Fam%C3%ADlia!5e0!3m2!1sit!2sit!4v1619621211797!5m2!1sit!2sit',
         active: false
-      }]
+      }] // lista objs evento (caratteristiche + map position)
+
+    },
+    created: function created() {
+      // Ascoltatore scroll su finestra
+      window.addEventListener('scroll', this.scrolledHead);
     },
     methods: {
+      // Allo scroll assegno il valore in px
+      scrolledHead: function scrolledHead() {
+        this.scroll = window.scrollY;
+      },
+      // Attivo/disattivo hamburger menu
+      hamburgerActive: function hamburgerActive() {
+        this.hamActive = !this.hamActive;
+      },
+      // Funzione apertura paragrafo evento
       openEvent: function openEvent(index) {
+        // Se l'evento aperto è uguale a sè stesso lo chiudo
         if (this.nextEvents[index].active == true) {
           this.nextEvents[index].active = false;
-        } else {
-          this.nextEvents.forEach(function (element) {
-            element.active = false;
-          });
-          this.nextEvents[index].active = true;
-        }
+        } // Altrimenti se non è gia aperto chiudo gli altri e apro l'evento cliccato
+        else {
+            this.nextEvents.forEach(function (element) {
+              element.active = false;
+            });
+            this.nextEvents[index].active = true;
+          }
 
         console.log(this.nextEvents);
       }
+    },
+    destroyed: function destroyed() {
+      window.removeEventListener('scroll', this.scrolledHead);
     }
   });
 }
 
 function init() {
   console.log('JS Connected');
-  vueLinks('#vueHead');
-  vueLinks('#vueFoot');
-  eventsParties();
+  vueApp();
 }
 
 document.addEventListener('DOMContentLoaded', init);

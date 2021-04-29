@@ -460,7 +460,7 @@ header .container .menu-nav {
   visibility: hidden;
   background-color: #eb4b54;
   opacity: 0;
-  transition: opacity 0.7s;
+  transition: opacity 0.5s, visibility 0.5s;
   padding: 150px 30px 20px;
   overflow-y: auto;
   text-align: center;
@@ -533,10 +533,10 @@ footer .nav-footer .container ul li a.active, footer .nav-footer .container ul l
   color: white;
 }
 footer .terms {
-  padding: 30px 30px 30px;
+  padding: 40px 30px 40px;
   position: relative;
   z-index: 100;
-  background-color: slateblue;
+  background-color: #292d39;
 }
 footer .terms .container {
   display: flex;
@@ -549,6 +549,15 @@ footer .terms .container {
 }
 footer .terms .container li {
   display: inline-block;
+  color: #7d7b8d;
+}
+footer .terms .container li a:not(.socials a) {
+  color: #7d7b8d;
+  transition: color 0.5s;
+  margin-left: 3px;
+}
+footer .terms .container li a:not(.socials a):hover {
+  color: white;
 }
 footer .terms .container li:not(.socials li) {
   font-size: 14px;
@@ -565,9 +574,12 @@ footer .terms .container .socials li {
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  background-color: teal;
+  background-color: #323844;
+  position: relative;
   text-align: center;
   cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s;
 }
 footer .terms .container .socials li a {
   display: inline-block;
@@ -577,5 +589,26 @@ footer .terms .container .socials li a {
 footer .terms .container .socials li a i {
   line-height: 40px;
   font-size: 18px;
-  color: grey;
+  color: #7d7b8d;
+}
+footer .terms .container .socials li:hover {
+  background-color: #2d333d;
+}
+footer .terms .container .socials li div {
+  visibility: hidden;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+  background-color: #222222;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+footer .terms .container .socials li:hover div {
+  visibility: visible;
+  opacity: 1;
 }

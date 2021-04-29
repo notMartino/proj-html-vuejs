@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
+    <!-- Vue Container -->
+<div id="app">
 
-    
-    <header id="vueHead" :class="scroll > 0 ? 'scrolled' : ''">
+    <header :class="scroll > 0 ? 'scrolled' : ''">
         <div class="container">
             <a href="index.html">
                 <img src="img/avada-music-logo.png" :class="scroll > 0 ? 'mini' : ''" alt="Avada Music Logo">
@@ -45,7 +45,7 @@
         </div>
     </header>
     
-    <main id="homepage" :scroll="scrolledHead()">
+    <main id="homepage">
         <section class="jumbo">
             <div>
                 <h2>
@@ -228,7 +228,7 @@
 
             </div>
 
-            <ul class="events-list" id="eventsVue">
+            <ul class="events-list">
                 <li v-for="(event, index) in nextEvents" @click="openEvent(index)" :class="event.active ? 'active' : ''">
                     <h2>
                         <span>+</span> 
@@ -261,7 +261,7 @@
         </section>
     </main>
 
-    <footer id="vueFoot">
+    <footer>
         <section class="nav-footer">
             <div class="container">
                 <img src="img/logo_footer.png" alt="Avada Music footer's logo">
@@ -277,42 +277,23 @@
         <section class="terms">
             <div class="container">
                 <ul>
-                    <li>&copy; Copyright 2012-2021</li>
-                    <li>
-                        Website theme by 
+                    <li v-for="(element, index) in rightsList">
+                        <span v-if="index == 0">&copy;</span> 
+                        {{element.name}} 
                         <a href="https://github.com/notMartino" target="_blank">
-                            not.Martino
-                        </a>
-                    </li>
-                    <li>All rights reserved</li>
-                    <li>
-                        Powered by
-                        <a href="https://github.com/notMartino" target="_blank">
-                            not.Martino
+                            {{element.link}}
                         </a>
                     </li>
                 </ul>
 
                 <ul class="socials">
-                    <li>
+                    <li v-for="social in socialsList">
                         <a href="#">
-                            <i class="fab fa-facebook-f"></i>
+                            <i :class="'fab fa-' + social.class"></i>
                         </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                        <div>
+                            {{social.name}}
+                        </div>
                     </li>
                 </ul>
             </div>
