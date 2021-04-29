@@ -32,31 +32,34 @@ header{
     left: 0;
     z-index: 999;
     transition: min-height 0.5s, background-color 0.5s;
+
+    // Se la pagina viene scrollata
     &.scrolled{
         min-height: 80px;
         background-color: rgba(41, 45, 57, 0.9);
     }
     .container{
         @include container;
-        display: flex;
         align-items: center;
         flex-wrap: wrap;
-
         img{
             vertical-align: middle;
             height: 75px;
             transition: height 0.5s;
         }
+        // Img piu piccola a pag. scrollata
         img.mini{
             height: 55px;
         }
 
+        // Icona hamburger
         .ham-container{
             cursor: pointer;
             height: 30px;
             display: flex;
             align-items: center;
             overflow: visible;
+            // Riga centrale
             .hamburger{
                 position: relative;
                 line-height: 30px;
@@ -65,6 +68,7 @@ header{
                 background-color:white;
                 border: 0;
                 transition: background-color 0.5s;
+                // Propreità righe esterne
                 &::before, &::after{
                     content: '';
                     height: 4px;
@@ -75,13 +79,16 @@ header{
                     left: 0;
                     transition: all 0.3s;
                 }
+                // Riga sopra
                 &::before{
                     top: -9px;
                 }
+                // Riga sotto
                 &::after{
                     bottom: -9px;
                 }
             }
+            // Quando è attivo diventa una X
             &.active .hamburger{
                 background-color: transparent;
                 &::before, &::after{
@@ -101,6 +108,7 @@ header{
 
         }
 
+        // Menu di navigazione a comparsa
         .menu-nav{
             position: fixed;
             top: 0;
@@ -121,10 +129,12 @@ header{
                 a{
                     color: rgba(255, 255, 255, 0.5);
                     transition: color 0.4s;
+                    // Link attivo acceso
                     &.active, &:hover{
                         color: white;
                     }
                 }
+                // Rimozione sottolineatura ai links
                 a::selection{
                     color:none;
                     background: none;
@@ -135,6 +145,7 @@ header{
                 }
             }
         }
+        // Quando clicco su hamburger attivo il menu nav
         .ham-container.active + .menu-nav{
             visibility: visible;
             opacity: 1;
@@ -146,6 +157,7 @@ header{
 footer{
     @include posStandard;
     
+    // Sezione superiore navigazione
     .nav-footer{
         @include centering(50px, 50px);
         height: 190px;
@@ -153,33 +165,33 @@ footer{
         background-color: $light-gray;
         font-family: $merri-font;
         font-size: 14px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexDisplay(space-between, center);
         .container{
             @include container;
 
             img{
                 vertical-align: middle;
             }
+            // Lista links navigazione
             ul{
-                display: flex;
-                align-items: center;
+                @include flexDisplay(flex-start, center);
                 li{
                     display: inline-block;
                     margin-left: 18px;
                     a{
                         color: rgba(255, 255, 255, 0.5);
                         transition: color 0.4s;
+                        // Link attivo acceso
                         &.active, &:hover{
                         color: white;
-                    }
+                        }
                     }
                 }
             };
         }
     }
 
+    // Sezione inferiore termini e socials
     .terms{
         @include centering (40px, 40px);
         @include posStandard;
@@ -187,9 +199,9 @@ footer{
         .container{
             @include container;
             height: 40px;
-            display: flex;
             align-items: center;
-            
+
+            // Lista terms
             li{
                 display: inline-block;
                 color: $para-text;
@@ -214,6 +226,7 @@ footer{
                 }
             }
 
+            // Lista links
             .socials li{
                 width: 40px;
                 height: 40px;
@@ -238,6 +251,7 @@ footer{
                     background-color: #2d333d;
                 }
 
+                // Box a comparsa su :hover social link
                 div{
                     visibility: hidden;
                     position: absolute;

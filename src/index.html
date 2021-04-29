@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVADA MUSIC</title>
+    <link rel="icon" href="img/avada-music-logo-mobile.png" type="image/gif" sizes="16x16">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/2e0cc00556.js" crossorigin="anonymous"></script>
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Vue Container -->
+<!-- Vue Container -->
 <div id="app">
 
     <header :class="scroll > 0 ? 'scrolled' : ''">
@@ -30,22 +31,25 @@
                 <img src="img/avada-music-logo.png" :class="scroll > 0 ? 'mini' : ''" alt="Avada Music Logo">
             </a>
 
+            <!-- Icona hamburger -->
             <div class="ham-container" :class="hamActive ? 'active' : ''" @click="hamburgerActive()">
                 <div class="hamburger">
                 </div>
             </div>
 
-            <div class="menu-nav">
+            <!-- Menu hamburger a comparsa con link navigazione -->
+            <nav class="menu-nav">
                 <ul>
                     <li v-for="link in links">
                         <a :href="link.href" :class="link.active ? 'active' : ''">{{link.name}}</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </header>
     
     <main id="homepage">
+        <!-- Jumbotron con sfondo -->
         <section class="jumbo">
             <div>
                 <h2>
@@ -54,6 +58,8 @@
                 <p>
                     There is an untold story behind every favorite song.
                 </p>
+
+                <!-- Btns -->
                 <a href="#" class="btn">
                     LATEST ALBUM
                 </a>
@@ -65,12 +71,14 @@
     
         <!-- Sezione Music is Life -->
         <section class="paragraph" id="fixed-scroll">
+            <!-- Barra rossa decorativa -->
             <div class="red-box">
             </div>
 
             <div class="introduction">
                 <h2>Music is Life</h2>
 
+                <!-- Separatore titolo/testo -->
                 <div class="separator"></div>
                 
                 <p>
@@ -91,11 +99,15 @@
                 </p>
             </div>
 
+            <!-- Covers layout -->
             <section class="covers">
+                <!-- Parte sinistra main -->
                 <div class="left-main">
+                    <!-- Box orizzontale 100% -->
                     <div class="box-cover horizontal">
                         <img src="img/blog_music_techo-1200x600.jpg" alt="Mixer">
 
+                        <!-- Titolo e testo descrittivo img -->
                         <div class="bottom-card">
                             <h2>
                                 Technology and music
@@ -105,10 +117,12 @@
                             </p>
                         </div>
 
+                        <!-- Overlay con titolo -->
                         <div class="red-overlay">
                             <h2>Technology and music</h2>
                         </div>
                     </div>
+                    <!-- Box vericale 50% left -->
                     <div class="box-cover vertical left">
                         <img src="img/blog-post3-600x900.jpg" alt="Giutars">
 
@@ -125,6 +139,7 @@
                             <h2>While my guitar gently sweeps</h2>
                         </div>
                     </div>
+                    <!-- Box vericale 50% right -->
                     <div class="box-cover vertical right">
                         <img src="img/blog-post4-600x900.jpg" alt="Folders">
 
@@ -141,6 +156,7 @@
                             <h2>It just sounds better</h2>
                         </div>
                     </div>
+                    <!-- Box orizzontale 100% -->
                     <div class="box-cover horizontal">
                         <img src="img/blog_flavor_rock-1200x600.jpg" alt="Rock party">
 
@@ -159,6 +175,7 @@
                     </div>
                 </div>
 
+                <!-- Parte destra side -->
                 <div class="right-side">
                     <div class="box-cover">
                         <img src="img/blog-post1-600x900.jpg" alt="Old school music">
@@ -194,10 +211,9 @@
                     </div>
                 </div>
             </section>
-            
         </section>
 
-        <!-- Sezione View -->
+        <!-- Sezione View banner -->
         <section class="view-box">
             <a href="#">
                 VIEW ALL LATEST NEWS
@@ -209,9 +225,10 @@
             <p>
                 “I just listened to it and said to myself, “Man, I really love this album.” Still, today, it just sounds so fresh. It sounds full of ideas. These guys knew what they were doing. They’re good. And they’re inventive. I haven’t heard anything this year that’s as inventive. I don’t really expect to.”
             </p>
+
+            <!-- Pulsante avvio video -->
             <div>
                 <img src="img/band_interview_play_icon.png" alt="Play button">
-
             </div>
         </section>
 
@@ -228,6 +245,7 @@
 
             </div>
 
+            <!-- Lista eventi dinamica -->
             <ul class="events-list">
                 <li v-for="(event, index) in nextEvents" @click="openEvent(index)" :class="event.active ? 'active' : ''">
                     <h2>
@@ -253,7 +271,7 @@
             </ul>
         </section>
 
-        <!-- Sezione View -->
+        <!-- Sezione View banner -->
         <section class="view-box">
             <a href="#">
                 VIEW ALL LIVE DATES
@@ -262,8 +280,9 @@
     </main>
 
     <footer>
+        <!-- Lista links nav -->
         <section class="nav-footer">
-            <div class="container">
+            <nav class="container">
                 <img src="img/logo_footer.png" alt="Avada Music footer's logo">
 
                 <ul>
@@ -271,11 +290,13 @@
                         <a href="#" :class="link.active ? 'active' : ''">{{link.name}}</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </section>
 
+        <!-- Sezione termini e social -->
         <section class="terms">
             <div class="container">
+                <!-- Lista termini e condizioni -->
                 <ul>
                     <li v-for="(element, index) in rightsList">
                         <span v-if="index == 0">&copy;</span> 
@@ -286,6 +307,7 @@
                     </li>
                 </ul>
 
+                <!-- Lista socials -->
                 <ul class="socials">
                     <li v-for="social in socialsList">
                         <a href="#">

@@ -38,42 +38,6 @@ function vueApp() {
                 },
             ], // Links navigazione header/footer
             linkActive: false, // Link attivo colore acceso
-            rightsList: [
-                {
-                    name: 'Copyright 1997-2021',
-                    link: ''
-                },
-                {
-                    name: 'WEBSITE THEME BY',
-                    link: 'NOT.MARTINO'
-                },
-                {
-                    name: 'ALL RIGHTS RESERVED',
-                    link: ''
-                },
-                {
-                    name: 'POWERED BY',
-                    link: 'NOT.MARTINO'
-                }
-            ], // Lista diritti, links developer
-            socialsList: [
-                { 
-                    class:'facebook-f',
-                    name: 'Facebook'
-                },
-                { 
-                    class:'twitter',
-                    name: 'Twitter'
-                },
-                { 
-                    class:'instagram',
-                    name: 'Instagram'
-                },
-                { 
-                    class:'youtube',
-                    name: 'Youtube'
-                }
-            ], // Links social
             nextEvents: [
                 {
                     name:'GEM FESTIVAL',
@@ -111,6 +75,42 @@ function vueApp() {
                     active: false
                 }
             ], // lista objs evento (caratteristiche + map position)
+            rightsList: [
+                {
+                    name: 'Copyright 1997-2021',
+                    link: ''
+                },
+                {
+                    name: 'WEBSITE THEME BY',
+                    link: 'NOT.MARTINO'
+                },
+                {
+                    name: 'ALL RIGHTS RESERVED',
+                    link: ''
+                },
+                {
+                    name: 'POWERED BY',
+                    link: 'NOT.MARTINO'
+                }
+            ], // Lista diritti, links developer
+            socialsList: [
+                { 
+                    class:'facebook-f',
+                    name: 'Facebook'
+                },
+                { 
+                    class:'twitter',
+                    name: 'Twitter'
+                },
+                { 
+                    class:'instagram',
+                    name: 'Instagram'
+                },
+                { 
+                    class:'youtube',
+                    name: 'Youtube'
+                }
+            ], // Links social
         },
         created: function() {
             // Ascoltatore scroll su finestra

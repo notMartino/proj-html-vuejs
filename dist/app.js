@@ -44,34 +44,6 @@ function vueApp() {
       // Links navigazione header/footer
       linkActive: false,
       // Link attivo colore acceso
-      rightsList: [{
-        name: 'Copyright 1997-2021',
-        link: ''
-      }, {
-        name: 'WEBSITE THEME BY',
-        link: 'NOT.MARTINO'
-      }, {
-        name: 'ALL RIGHTS RESERVED',
-        link: ''
-      }, {
-        name: 'POWERED BY',
-        link: 'NOT.MARTINO'
-      }],
-      // Lista diritti, links developer
-      socialsList: [{
-        "class": 'facebook-f',
-        name: 'Facebook'
-      }, {
-        "class": 'twitter',
-        name: 'Twitter'
-      }, {
-        "class": 'instagram',
-        name: 'Instagram'
-      }, {
-        "class": 'youtube',
-        name: 'Youtube'
-      }],
-      // Links social
       nextEvents: [{
         name: 'GEM FESTIVAL',
         location: 'MILANO, ITALY',
@@ -102,7 +74,35 @@ function vueApp() {
         date: '10/07/2021',
         src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16929.135687378814!2d2.1610096169375628!3d41.40282781902784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2dcd83dfb93%3A0x9bd8aac21bc3c950!2sSagrada%20Fam%C3%ADlia!5e0!3m2!1sit!2sit!4v1619621211797!5m2!1sit!2sit',
         active: false
-      }] // lista objs evento (caratteristiche + map position)
+      }],
+      // lista objs evento (caratteristiche + map position)
+      rightsList: [{
+        name: 'Copyright 1997-2021',
+        link: ''
+      }, {
+        name: 'WEBSITE THEME BY',
+        link: 'NOT.MARTINO'
+      }, {
+        name: 'ALL RIGHTS RESERVED',
+        link: ''
+      }, {
+        name: 'POWERED BY',
+        link: 'NOT.MARTINO'
+      }],
+      // Lista diritti, links developer
+      socialsList: [{
+        "class": 'facebook-f',
+        name: 'Facebook'
+      }, {
+        "class": 'twitter',
+        name: 'Twitter'
+      }, {
+        "class": 'instagram',
+        name: 'Instagram'
+      }, {
+        "class": 'youtube',
+        name: 'Youtube'
+      }] // Links social
 
     },
     created: function created() {

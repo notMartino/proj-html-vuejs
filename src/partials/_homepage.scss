@@ -1,6 +1,7 @@
 @import 'variables';
 
 main#homepage{
+    // Sezione jumbo under
     .jumbo{
         position: fixed;
         top: 0;
@@ -14,9 +15,7 @@ main#homepage{
         background-image: url('img/home_slider.jpg');
         background-position: center;
         background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexDisplay(center, center);
         flex-wrap: wrap;
         text-align: center;
         h2{
@@ -32,6 +31,7 @@ main#homepage{
         a.btn{
             @include btnStandard($view-bg-color, white, $view-bg-color);
             margin-right: 10px;
+            
         }
         a.btn-alt{
             @include btnStandard(transparent, white, white);
@@ -41,11 +41,13 @@ main#homepage{
             background-color: white;
             color: black;
             border-color: white;
-            text-decoration: underline;
         }
 
     }
+
+    // Sezione paragrafo
     .paragraph{
+        // Primo paragrafo con margine per jumbo
         &#fixed-scroll{
             margin-top: 100vh;
             background-color: $light-gray;
@@ -64,24 +66,26 @@ main#homepage{
         background-color: $main-bg-color; 
         @include posStandard;
         @include centering(50px, 50px);
-        display: flex;
-        justify-content: center;
+        @include flexDisplay(center, flex-start);
         flex-wrap: wrap;
         text-align: center;
         color: white;
 
+        // Testo introduttivo/descrittivo
         .introduction{
             flex-basis: 60%;
+            // Titolo
             h2{
                 font-family: $montserrat-font;
                 font-size: 60px;
             }
+            // Separatore orizz.
             .separator{
                 border: 1px solid #444e63;
                 width: 200px;
                 margin: 25px auto 40px;
             }
-
+            // Testo
             p{
                 font-family: $merri-font;
                 color: $para-text;
@@ -89,17 +93,21 @@ main#homepage{
             }
         }
 
+        // Covers con immagini
         .covers{
             flex-basis: 1250px; // (1250px)
             height: 1380px;
             margin: 50px 0;
-            display: flex;
-            align-items: flex-start;
+            @include flexDisplay('', flex-start);
+
+            // Parte sinistra principale
             .left-main{
                 width: calc(850px - 30px);
                 margin-left: -30px;
                 display: flex;
                 flex-wrap: wrap;
+
+                // Box orizz. 100%
                 .box-cover.horizontal{
                     margin: 0 30px;
                     width: 100%;
@@ -111,6 +119,7 @@ main#homepage{
                         min-height: 100%;
                     }
                 }
+                // Box verticale 50%
                 .box-cover.vertical{
                     flex-basis: calc(50% - 45px);
                     background-color: aqua;
@@ -129,12 +138,12 @@ main#homepage{
                     }
                 }
             }
+            // Parte destra
             .right-side{
                 width: 460px;
                 height: 100%;
                 margin-top: -30px;
                 .box-cover{
-                    background-color: blueviolet;
                     width: 100%;
                     margin: 30px 0;
                     height: calc(50% - 15px);// height: 675px;
@@ -147,9 +156,12 @@ main#homepage{
             }
         }
 
+        // Proprietà generali box in covers
         .box-cover{
             position: relative;
             overflow: hidden;
+
+            // Descrizione cover in bottom
             .bottom-card{
                 position: absolute;
                 bottom: 0;
@@ -173,6 +185,7 @@ main#homepage{
                 }
             }
 
+            // Overlay a box a :hover
             .red-overlay{
                 width: 100%;
                 height: 100%;
@@ -192,6 +205,7 @@ main#homepage{
                 }
             }
 
+            // Transizione overlay/bottom card
             &:hover .red-overlay{
                 left: 0;
             }
@@ -200,6 +214,7 @@ main#homepage{
             }
         }
 
+        // Sezione lista eventi
         .events-list{
             flex-basis: 80%;
             margin-top: 50px;
@@ -238,16 +253,20 @@ main#homepage{
                     background-color: $view-bg-color;
                 }
                 
+                // Sezione a comparsa con mappa e descrizione evento
                 .map{
-                    display: flex;
-                    align-items: center;
+                    @include flexDisplay('', center);
                     flex-wrap: wrap;
                     margin-top: 30px;
+
+                    // Mappa Google Maps
                     iframe{
                         width: 320px;
                         height: 240px;
                         margin-right: 50px
                     }
+
+                    // Sezione con descrizione
                     div{
                         align-self: flex-end;
                         flex-basis:calc(100% - 370px);
@@ -267,6 +286,8 @@ main#homepage{
                             font-size: 15px;
                             line-height: 32px;
                         }
+
+                        // Link prenotazione 
                         a{
                             @include btnStandard($view-bg-color, white, $view-bg-color);
                             padding: 10px 30px;
@@ -283,6 +304,7 @@ main#homepage{
         }
     }
     
+    // Sezione banner view
     .view-box{
         @include posStandard;
         background-color: $view-bg-color;
@@ -307,6 +329,7 @@ main#homepage{
         }
     }
 
+    // Sezione music player
     .music-player{
         @include posStandard;
         @include centering(100px, 100px);
@@ -317,10 +340,10 @@ main#homepage{
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexDisplay(center, center);
         flex-wrap: wrap;
+
+        // Testo descrizione
         p{ 
             flex-basis: 50%;
             font-family: $merri-font;
@@ -331,6 +354,7 @@ main#homepage{
             width: 80%;
             margin-bottom: 50px;
         }
+        // Img play
         div {
             flex-basis: 80%;
             img{
