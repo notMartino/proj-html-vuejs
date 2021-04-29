@@ -160,7 +160,9 @@ main#homepage{
         .box-cover{
             position: relative;
             overflow: hidden;
-
+            a.full{
+                @include fullBoxLink;
+            }
             // Descrizione cover in bottom
             .bottom-card{
                 position: absolute;
@@ -359,7 +361,50 @@ main#homepage{
             flex-basis: 80%;
             img{
                 cursor: pointer;
+                transition: opacity 0.3s;
+                &:hover{
+                    opacity: 0.7;
+                }
             }
         }
+    }
+}
+
+.video-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    @include flexDisplay(center, center);
+    visibility: hidden;
+    transition: visibility 0.5s, opacity 0.5s;
+    text-align: center;
+    flex-wrap: wrap;
+    text-shadow: 0 0 15px $view-bg-color;
+    color: white;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+    i{
+        font-size: 45px;
+        position: absolute;
+        top: 20px;
+        left: 73px;
+        cursor: pointer;
+    }
+    h1{
+        flex-basis: 100%;
+        font-size: 30px;
+        font-weight: 500;
+        font-family: $montserrat-font;
+    }
+    iframe#video{
+        margin: 10px 40px;
+        align-self: flex-start;
     }
 }

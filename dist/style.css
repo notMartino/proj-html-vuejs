@@ -160,6 +160,10 @@ main#homepage .paragraph .box-cover {
   position: relative;
   overflow: hidden;
 }
+main#homepage .paragraph .box-cover a.full {
+  width: 100%;
+  height: 100%;
+}
 main#homepage .paragraph .box-cover .bottom-card {
   position: absolute;
   bottom: 0;
@@ -348,6 +352,51 @@ main#homepage .music-player div {
 }
 main#homepage .music-player div img {
   cursor: pointer;
+  transition: opacity 0.3s;
+}
+main#homepage .music-player div img:hover {
+  opacity: 0.7;
+}
+
+.video-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  transition: visibility 0.5s, opacity 0.5s;
+  text-align: center;
+  flex-wrap: wrap;
+  text-shadow: 0 0 15px #eb4b54;
+  color: white;
+}
+.video-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.video-overlay i {
+  font-size: 45px;
+  position: absolute;
+  top: 20px;
+  left: 73px;
+  cursor: pointer;
+}
+.video-overlay h1 {
+  flex-basis: 100%;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+.video-overlay iframe#video {
+  margin: 10px 40px;
+  align-self: flex-start;
 }
 
 * {
@@ -379,7 +428,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 900;
   transition: min-height 0.5s, background-color 0.5s;
 }
 header.scrolled {

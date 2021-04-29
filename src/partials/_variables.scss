@@ -33,6 +33,10 @@
     justify-content: $justify;
     align-items: $align;
 }
+@mixin fullBoxLink {
+    width: 100%;
+    height: 100%;
+}
 
 // Variables
 // Colors
